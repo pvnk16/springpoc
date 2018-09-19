@@ -7,15 +7,16 @@
 
 	<bean id="bookController"
 		class="com.spring.controller.BookController">
-		
 		<property name="bookService" ref="bookService"></property>
 	</bean>
 
 	<bean id="bookService" lazy-init="true"
 		class="com.spring.service.impl.BookServiceImpl" scope="prototype">
+		
 		<property name="bookId" value="123" />
 		<property name="bookName" value="book1" />
 		<property name="bookTitle" value="book1 by bear grylls"/>
+		
 	</bean>
 
 </beans>

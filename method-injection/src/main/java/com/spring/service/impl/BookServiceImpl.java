@@ -4,12 +4,34 @@ import com.spring.domain.Book;
 import com.spring.service.BookService;
 
 public class BookServiceImpl implements BookService {
-
+	
+	
 	public BookServiceImpl() {
 		System.out.println("BookServiceImpl::new");
 	}
+	
 
 	private String bookId;
+
+	private String bookName;
+
+	private String bookTitle;
+
+	/*
+	 * Method to get book.(non-Javadoc)
+	 * 
+	 * @see com.spring.service.BookService#getBook()
+	 */
+	@Override
+	public Book getBook() {
+		Book book = new Book();
+
+		book.setName(this.bookName);
+		book.setTitle(this.bookTitle);
+		book.setPrice(this.bookId);
+
+		return book;
+	}
 
 	/**
 	 * @return the bookId
@@ -51,26 +73,6 @@ public class BookServiceImpl implements BookService {
 	 */
 	public void setBookTitle(String bookTitle) {
 		this.bookTitle = bookTitle;
-	}
-
-	private String bookName;
-
-	private String bookTitle;
-
-	/*
-	 * Method to get book.(non-Javadoc)
-	 * 
-	 * @see com.spring.service.BookService#getBook()
-	 */
-	@Override
-	public Book getBook() {
-		Book book = new Book();
-
-		book.setName(this.bookName);
-		book.setTitle(this.bookTitle);
-		book.setPrice(this.bookId);
-
-		return book;
 	}
 
 }
