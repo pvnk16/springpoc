@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="itemDao" class="com.spring.dao.impl.ItemDaoImpl" />
+
+	<bean id="factoryItemService"
+		class="com.spring.factory.ServiceFactory">
+
+	</bean>
+
+	<bean id="itemService" factory-bean="factoryItemService"
+		factory-method="getItemService">
+		<property name="itemDao" ref="itemDao"></property>
+		</bean>
+
+	<!-- <bean id = "itemService" class="com.spring.service.impl.ItemServiceImpl" 
+		factory-method="getItemServiceImpl"> <property name="itemDao" ref="itemDao"></property> 
+		</bean> -->
+</beans>

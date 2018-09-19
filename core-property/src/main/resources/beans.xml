@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="movie2Service" 
+		class="com.spring.service.impl.MovieServiceImpl">
+
+		<property name="movieName" value="Bang Bang"></property>
+		<property name="movieId" value="1"></property>
+		<property name="movieBudget" value="10000"></property>
+	</bean>
+	
+	<bean autowire-candidate="false" id="movieService" class="com.spring.service.impl.Movie2ServiceImpl"></bean>
+	
+	<bean id = "movieController" class="com.spring.controller.MovieController"
+	autowire="byName">
+		
+	</bean>
+
+</beans>
