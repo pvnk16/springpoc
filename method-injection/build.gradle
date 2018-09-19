@@ -15,12 +15,16 @@ plugins {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'BookApp'
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
-
+    //spring dependencies.
+    compile 'org.springframework:spring-core:5.0.9.RELEASE'
+    compile 'org.springframework:spring-context:5.0.9.RELEASE'
+    
+	
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }
