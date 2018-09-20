@@ -7,26 +7,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.controller.BookController;
-import com.spring.service.impl.BookServiceImpl;
 
 public class BookApp {
 
 	public static void main(String... args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		
-		BookController controller = context.getBean(BookController.class,"bookController");
-		
+		BookController controller = context.getBean(BookController.class, "bookController");
 		System.out.println(controller.getBookInfo().getTitle());
-		
-		BookController controller2 = context.getBean(BookController.class,"bookController");
-		
-		BookServiceImpl bookService = context.getBean(BookServiceImpl.class,"bookService");
-		
-		bookService.setBookTitle("Book2 by bear");
-		
-		System.out.println(controller.getBookInfo().getTitle());
-		
-		
+		/*
+		 * As Prototype bean need to come new instance on creating bean.
+		 */
+		BookController controller2 = context.getBean(BookController.class, "bookController");
+		System.out.println(controller2.getBookInfo().getTitle());
+
 	}
 }

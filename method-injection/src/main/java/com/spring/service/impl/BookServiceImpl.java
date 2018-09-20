@@ -6,7 +6,7 @@ import com.spring.service.BookService;
 public class BookServiceImpl implements BookService {
 	
 	
-	public BookServiceImpl() {
+	private BookServiceImpl() {
 		System.out.println("BookServiceImpl::new");
 	}
 	
