@@ -5,7 +5,9 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class PostProcessTestBean implements BeanPostProcessor {
 
-	
+	public PostProcessTestBean() {
+		System.out.println("PostProcessTestBean::new");
+	}
 	
 	
 	/*
@@ -17,6 +19,7 @@ public class PostProcessTestBean implements BeanPostProcessor {
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("inPostprocessBeforeInitialization");
+		System.out.println("Bean name is  "+beanName);
 		return bean;
 	}
 
@@ -29,6 +32,7 @@ public class PostProcessTestBean implements BeanPostProcessor {
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		System.out.println("In postProcess after initialization");
+		System.out.println("Bean name is  "+beanName);
 		return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
 	}
 

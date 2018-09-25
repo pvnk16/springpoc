@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations"
+			value="classpath:application.properties"></property>
+			<property name="properties">
+        <value>custom.strategy.class=com.spring.beans.ReadProps</value>
+    </property>
+	</bean>
+
+
+	<bean name="postTest" class="${custom.strategy.class}">
+		<property name="name" value="${name}"></property>
+		<property name="className" value="${className}"></property>
+	</bean>
+
+
+
+</beans>

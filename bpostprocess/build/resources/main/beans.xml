@@ -7,15 +7,13 @@
         http://www.springframework.org/schema/lang
         http://www.springframework.org/schema/lang/spring-lang.xsd">
 
-    <bean name = "testing" class="com.spring.beans.InitBean" init-method="initTest"/>
+    <bean class="com.spring.beans.InitBean"/>
     
-    <bean name= "testing2" class="com.spring.beans.TestBean2" init-method="initTest"/>
-    
+
     <!--
     when the above bean (messenger) is instantiated, this custom
     BeanPostProcessor implementation will output the fact to the system console
     -->
-    
     <bean class="com.spring.postprocess.PostProcessTestBean"/>
 
 </beans>
