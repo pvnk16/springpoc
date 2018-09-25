@@ -9,9 +9,7 @@ public class Application {
 
 	public static void main(String... args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(BookConfiguration.class);
-
 		BookController controller = context.getBean(BookController.class);
-
 		System.out.println(controller.getBook().getAuthor());
 	}
 
