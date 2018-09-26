@@ -1,7 +1,6 @@
 
 package com.spring;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.spring.controller.AppController;
@@ -21,7 +20,6 @@ public class ProfileApp {
 		contexst.refresh();
 		
 		AppController controller = contexst.getBean(AppController.class);
-		
 		System.out.println(controller.getAppDetails().getName());
 		
 		
